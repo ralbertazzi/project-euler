@@ -37,3 +37,19 @@ def proper_divisors(number):
     for d in xrange(1, number // 2 + 1):
         if number % d == 0:
             yield d
+
+            
+def fibonacci():
+    
+    """
+    Infinite fibonacci sequence
+    """
+    
+    n1, n2 = 1, 2
+    
+    yield n1
+    yield n2
+    
+    while True:
+        n1, n2 = n2, n1 + n2
+        yield n2
