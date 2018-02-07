@@ -15,3 +15,25 @@ def lcm(*numbers):
     def _lcm(a, b):
         return (a * b) // gcd(a, b)
     return reduce(_lcm, numbers, 1)
+
+
+def sum_of_digits(number):
+    return sum(int(digit) for digit in str(number))
+
+
+def factorial(number):
+    
+    if number == 0 or number == 1:
+        return 1
+    else:
+        prod = 1
+        for el in xrange(2, number + 1):
+            prod *= el
+        return prod
+
+    
+def proper_divisors(number):
+    
+    for d in xrange(1, number // 2 + 1):
+        if number % d == 0:
+            yield d
