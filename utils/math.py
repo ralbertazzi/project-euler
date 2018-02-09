@@ -20,6 +20,12 @@ def lcm(*numbers):
 def sum_of_digits(number):
     return sum(int(digit) for digit in str(number))
 
+def prod_of_list(l):
+    p = 1
+    for el in l:
+        p = p * el
+    return p
+
 
 def factorial(number):
     
