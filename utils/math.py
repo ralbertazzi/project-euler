@@ -1,6 +1,5 @@
 # gcd and lcm implementations from https://gist.github.com/endolith/114336
 
-
 # Greatest common divisor of more than 2 numbers.  Am I terrible for doing it this way?
 
 def gcd(*numbers):
@@ -25,6 +24,9 @@ def prod_of_list(l):
     for el in l:
         p = p * el
     return p
+
+def number_from_list_of_digits(l):
+    return sum(digit*(10**(len(l) - idx - 1)) for idx, digit in enumerate(l))
 
 
 def factorial(number):
