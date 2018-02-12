@@ -53,7 +53,7 @@ def fibonacci():
     Infinite fibonacci sequence
     """
     
-    n1, n2 = 1, 2
+    n1, n2 = 1, 1
     
     yield n1
     yield n2
