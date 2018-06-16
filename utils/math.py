@@ -61,3 +61,47 @@ def fibonacci():
     while True:
         n1, n2 = n2, n1 + n2
         yield n2
+
+        
+from numpy import floor, sqrt
+        
+def sqrt_continued_fraction(D):
+    
+    """
+    Returns the continued fraction of the sqrt of D
+    """
+    
+    R = int(floor(sqrt(D)))
+    f = [R]
+    
+    a, P, Q = R, 0, 1
+    
+    P = a*Q - P;
+    Q = (D - P*P)/Q;
+    a = (R + P)/Q;
+    f.append(a)
+    
+    while Q != 1:
+        
+        P = a*Q - P;
+        Q = (D - P*P)/Q;
+        a = (R + P)/Q;
+        f.append(a)
+        
+    return f
+
+
+from fractions import Fraction
+
+def continued_fraction_list_to_fraction(L):
+
+    """
+    Returns the fraction corresponding to the lst of terms of a continued fraction
+    (computed for example by the sqrt_continued_fraction method)
+    """
+    
+    L = L[::-1]
+    f = Fraction(L[0])
+    for v in L[1:]:
+        f = v + 1 / f
+    return f
