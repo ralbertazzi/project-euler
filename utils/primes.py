@@ -24,7 +24,7 @@ def is_prime_trial_division(n):
     if n % 2 == 0:
         return False
     
-    for d in xrange(3, int(np.sqrt(n)) + 1):
+    for d in range(3, int(np.sqrt(n)) + 1):
         if n % d == 0:
             return False
         

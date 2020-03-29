@@ -35,14 +35,14 @@ def factorial(number):
         return 1
     else:
         prod = 1
-        for el in xrange(2, number + 1):
+        for el in range(2, number + 1):
             prod *= el
         return prod
 
     
 def proper_divisors(number):
     
-    for d in xrange(1, number // 2 + 1):
+    for d in range(1, number // 2 + 1):
         if number % d == 0:
             yield d
 
